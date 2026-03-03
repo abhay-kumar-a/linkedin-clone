@@ -1,0 +1,54 @@
+x MicroservicesArchitecture & Spring Cloud 
+• Spring Cloud Netflix Eureka: Used for Service Discovery. It acts as the registry where 
+all microservices (User, Post, Chat, etc.) register themselves so they can find each other 
+dynamicany without hardcoded IP addresses. 
+• Spring Cloud Gateway: Acts as the API Gateway. It routes all incoming frontend traffr 
+to the correct underlying microservice and handles global cross-cutting (like 
+validating JWTs before letting traffic inside). 
+• Spring Cloud OpenFeign: A declarative REST used for Inter-Service 
+Communication. It allows one microservice (like Job Service) to easily call another (like 
+File Service) using simpleJava interfaces instead of writing bulky RestTemp1ate code. 
+& Security & Identity 
+• Spring Security: Used to secure the application, manage CORS, and protect the 
+endpoints from unauthorized access. 
+• JWT (JSON Web Tokens): Used for Stateless Authentication. It securely transmits user 
+identity between the client and the microservices without needing a centralized session 
+• BCrypt (via Spring Security): Used for cryptographically hashing user passwords before 
+saving them to the database in the Auth Service. 
+
+
+
+
+Database & Data Access 
+• Spring Data JPA: Used as the Data Access layer. It drastically reduces boilerplate code 
+allowing you to interact with the database using Java interfaces ( Jpc*epository ) instead 
+of writing raw SQL queries. 
+• Hibernate: The underlying ORM (Object-Relational Mapping) tool used Spring Data JPA 
+to map your Java entity classes (e.g., @Entity User ) directly to database tables. 
+• Relational Database (MySQL I PostgreSQL): Based on the use of JPA and entities, the 
+system is designed to run on a standard SQL relational database. 
+• Real-Tinle Communication 
+Spring WebSockets: Used specifically in the chat-service to establsh a persÉtent, 
+bidirectional connection between users. 
+• STOMP (Simple Text Oriented Messaging Protocol): Used on top of WebSockets to 
+format the messages and handle topic subscriptions (so User A's 'message gets routed 
+perfectly to User Bs screen). 
+
+
+
+1. Authentication Service ( auth-service ) 
+Purpose: Handles user identity, registration, and token generation. It acts as the gatekeeper 
+for the application. 
+Endpoints Detail 
+POST 'auth/ register 
+• Why we use it: To onboard new users into the system and securely store their 
+credentials. 
+• Why it's necessary: We must separate raw passwords from the rest of the 
+application. This endpoint encrypts the password (usually via BCrypt) before saving it 
+to the database. 
+POST 'auth/login 
+• Why we use it: To authenticate a user and return a JSON Web Token (JWT). 
+Why it's necessary: In a microservices architecture, stateful sessions (saving session 
+IDs on the server) are hard to scale. JWTs allow stateless authentication, meaning 
+any microservice can verify the user's identity just by looking at the token without 
+hitting a central database. 

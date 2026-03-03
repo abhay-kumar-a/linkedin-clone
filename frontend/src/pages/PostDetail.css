@@ -1,0 +1,48 @@
+.post-detail-page {
+  margin-top: 72px;
+  padding-bottom: 40px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
+.post-detail {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.post-detail .post-header {
+  padding: 16px;
+}
+
+.post-detail .post-content {
+  padding: 0 16px 16px;
+}
+
+.post-detail .post-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.post-comments-section {
+  border-top: 1px solid var(--border);
+  padding: 16px;
+}
+
+.post-comments-section h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}

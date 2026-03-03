@@ -1,0 +1,123 @@
+.create-post-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.create-post-content {
+  width: 90%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.create-post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.create-post-header h3 {
+  font-size: 20px;
+}
+
+.close-btn {
+  background: none;
+  font-size: 24px;
+  color: var(--text-secondary);
+  padding: 4px;
+}
+
+.create-post-user {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.create-post-user .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.create-post-user .user-info h4 {
+  font-size: 14px;
+}
+
+.create-post-user select {
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.create-post-content textarea {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  min-height: 120px;
+}
+
+.file-preview {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.file-preview img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.file-preview button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: var(--white);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.create-post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.attach-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.attach-btn {
+  background: none;
+  font-size: 20px;
+  color: var(--text-secondary);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.attach-btn:hover {
+  background: rgba(0,0,0,0.08);
+  border-radius: 50%;
+}
